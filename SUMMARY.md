@@ -1,3 +1,6 @@
 # Summary
 
-* [First Chapter](chapter1.md)
+* [Introduction](README.md)
+* [LinkedList](chapter1.md)
+* [Tree Traversal](tree-traversal.md)
+
