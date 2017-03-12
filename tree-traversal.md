@@ -125,6 +125,14 @@ public List<Integer> postorderTraversal(TreeNode root) {
  }
 ```
 
+* ZigZag level traversal
+
+同上，唯一注意的是
+
+1. 用一个isLeftToRight 的boolean flag，每层traverse完，isLeftToRight=!isLeftToRight
+2. if\(isLeftToRight\) list.add\(root.val\)
+3. else list.addFirst\(root.val\)
+
 * Binary Tree Vertical Order Traversal
 
 ```java
@@ -184,4 +192,8 @@ public static void dfsHelper(TreeNode root,List<List<Integer>> left, List<List<I
 dfs 方法要注意的细节是，当level&lt;0时，判断的是left.size==-level-1，因为左边的level是从－1开始，可是index是从0开始
 
 时间复杂度两个都是遍历所有节点，空间复杂度，两个都用了两个list来存结果，BFS用了额外的两个queue来便利，DFS用了额外的call stack来便利。
+
+
+
+
 
