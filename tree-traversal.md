@@ -1,18 +1,40 @@
 # Tree Traversal
 
 1. Inorder
+2. 
 
 
 
-1. Preorder
 
-using stack
+
+
+1. 2. Preorder
+
+using stack to print the preorder of the tree iteratively
 
 ```java
- public List<Integer> preorderTraversal(TreeNode root) {
- List<Integer> ret=new ArrayList<Integer>();
- if(root==null)
- 
+ public List<Integer> preorderTraversalIte(TreeNode root) {
+     List<Integer> ret=new ArrayList<Integer>();
+     if(root==null)    
+         return ret;
+     ArrayDeque<TreeNode> stack=new ArrayDeque<>();
+     stack.push(root);
+     while(!stack.isEmpty()){
+         TreeNode curr=stack.pop();
+         ret.add(curr.val);
+         if(curr.right!=null) //先push右边
+         stack.push(curr.right);
+         if(curr.left!=null) //后push左边
+         stack.push(curr.left);
+     }
+     return ret;
+ }
+```
+
+using  recursive stack to print the preorder 
+
+```java
+ public List<Integer> preorderTraversal(TreeNode root,List<>) {
  
  }
 ```
@@ -27,8 +49,8 @@ using stack
          List<List<Integer>> ret=new ArrayList<>();
          if(root==null)
          return ret;
-         
-         ArrayDeque<Integer> nodeQueue=new ArrayDeque<Integer>();
+
+         ArrayDeque<TreeNode> nodeQueue=new ArrayDeque<>();
          nodeQueue.offer(root);
          while(!nodeQueue.isEmpty()){
                int size=nodeQueue.size();
