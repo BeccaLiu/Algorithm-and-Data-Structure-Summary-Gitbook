@@ -1,7 +1,9 @@
 # Summary
 
 * [Introduction](README.md)
-* [LinkedList](chapter1.md)
-* [Tree Traversal](tree-traversal.md)
-* [K Sum](k-sum.md)
+* [1. LinkedList](chapter1.md)
+  * [Cycle in Linked list](chapter1/cycle-in-linked-list.md)
+* [2. Tree Traversal](tree-traversal.md)
+* [3. K Sum](k-sum.md)
+  * [Two Sum](k-sum/two-sum.md)
 

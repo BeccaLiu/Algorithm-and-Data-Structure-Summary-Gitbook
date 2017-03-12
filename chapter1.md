@@ -1,6 +1,6 @@
 # Linked-List
 
-* 遍历linked list， Add two numbers
+* 遍历linked list， Add two numbers
 
 模版：
 
@@ -26,21 +26,21 @@ curr.next=new ListNode(add);
 
 总结：1.create dummy as return list head,
 
-         2.create a list runner/or append input head to dummy
+```
+     2.create a list runner/or append input head to dummy
 
-         3.如果input是两个list，while的终止条件可以是l1!=null\|\|l2!=null， 内部实现分情况判断，然后注意在if内写l1=l1.next
+     3.如果input是两个list，while的终止条件可以是l1!=null\|\|l2!=null， 内部实现分情况判断，然后注意在if内写l1=l1.next
 
-          4.最后记得判断add
-
-
+      4.最后记得判断add
+```
 
 * Delete linked list with only access to remove node
 
 **Input: **\(2 -&gt;4 -&gt;3\) , 4
 
-**Output:**2 -&gt;3
+**Output:**2 -&gt;3
 
-一般情况，对于singly linked list，remove时会保留一个pre，然后通过pre.next=remove.next来remove
+一般情况，对于singly linked list，remove时会保留一个pre，然后通过pre.next=remove.next来remove
 
 但是这道题只给了remove node没有pre，方法是：
 
@@ -49,11 +49,9 @@ remove.val=remove.next.val;
 remove.next=remove.next.next;
 ```
 
-
-
 * Reverse Linked List
 
-1. iterative 每次remove一个node，然后append到dummy的位置,1 2 3 4 5- &gt;21345-&gt;32145-&gt;
+* iterative 每次remove一个node，然后append到dummy的位置,1 2 3 4 5- &gt;21345-&gt;32145-&gt;
 
 ```java
 public ListNode reverseList(ListNode head){
@@ -73,16 +71,40 @@ public ListNode reverseList(ListNode head){
     }
 return  rt.next;
 }
-
 ```
 
 1. 总结： 1.remove node of head.next
 
-             2. insert after dummy
+   1. insert after dummy
 
-             3. head.next 永远指向下一个要remove的node，所以不用head＝head.next
+   2. head.next 永远指向下一个要remove的node，所以不用head＝head.next
 
 2. Recursive reverse
+
+1&gt;2&gt;3&gt;4&gt;5 进入最后一个点5，
+
+然后把list变为1&gt;2&gt;3-&gt;4&lt;-5 返回5
+
+然后把list变为1&gt;2&gt;3&lt;-4&lt;-5 返回5
+
+```java
+public ListNode reverseList(ListNode head){
+if(head==null||head.next==null)
+return head;
+//going deeper into the list
+ListNode newHead=reverseList(head.next);
+head.next.next=head;
+head.next=null;
+return newHead;
+}
+
+```
+
+总结：1. 任何时候判断结束时，如果有head.next==null，前面必须加head==null来判断结束，不然会抛出nullpointerException。
+
+          2.注意head.next.next=head 而不是newhead.next＝head，前面的reverserList\(head.next\)只是为了让你进入循环
+
+
 
 
 
