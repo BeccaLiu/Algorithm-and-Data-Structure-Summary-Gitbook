@@ -1,14 +1,6 @@
 # Tree Traversal
 
-1. Inorder
-2. 
-
-
-
-
-
-
-1. 2. Preorder
+* Preorder
 
 using stack to print the preorder of the tree iteratively
 
@@ -31,16 +23,76 @@ using stack to print the preorder of the tree iteratively
  }
 ```
 
-using  recursive stack to print the preorder 
+using  recursive stack to print the preorder
 
 ```java
- public List<Integer> preorderTraversal(TreeNode root,List<>) {
- 
+ public void preorderTraversal(TreeNode root,List<Integer> ret) {
+         if(root==null)
+         return;
+         list.add(root);
+         preorderTraversal(root.left,ret);
+         preorderTraversal(root.right,ret);
  }
 ```
 
-1. Postorder
-2. Level order
+* Inorder 
+
+using a stack, but difference between using stack to do the preorder, here we push all the left node to stack right away 
+
+```java
+public List<Integer> inorderTraversal(TreeNode root) {
+    List<Integer> list =new ArrayList<>();
+    if(root==null)
+    return list;
+    
+    ArrayDeque<TreeNode> stack=new ArrayDeque<TreeNode>();
+    while(root!=null){
+    stack.push(root);
+    root=root.left;
+    }
+    
+    while(!stack.isEmpty()){
+        TreeNode curr=stack.pop();
+        list.add(curr.val);
+        TreeNode right=curr.right;
+        while(right!=null){
+        stack.push(right);
+        right=right.left;
+        }    
+    }
+    return list;
+}
+```
+
+*  Postorder
+
+using the same idea as preorder
+
+for a tree like 
+
+       1\|2,3\|4,5,6   preorder: 1 \(2 \(4 5\)\)\( 3 \(6\)\)  the postorder is \(\(4 5\) 2\)\(\(6\) 3\) 1 using  linkedlist, everytime insert in the first
+
+```java
+public List<Integer> postorderTraversal(TreeNode root) {
+    List<Integer> list =new LinkedList<>();
+    if(root==null)
+    return list;
+    
+    ArrayDeque<TreeNode> stack=new ArrayDeque<>();
+    stack.push(root);
+   while(!stack.isEmpty()){
+       TreeNode curr=stack.pop();
+       list.addFirst(curr.val); //preorder添加list尾部，postorder插入list的头部
+       if(curr.left!=null) //先push 左边 和preorder是相反的顺序
+       stack.push(curr.left);
+       if(curr.right!=null) //后push 右边
+       stack.push(curr.right);
+   }
+    return list;
+}
+```
+
+1. Level order
 
 利用Queue
 
