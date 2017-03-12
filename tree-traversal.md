@@ -37,20 +37,20 @@ using  recursive stack to print the preorder
 
 * Inorder 
 
-using a stack, but difference between using stack to do the preorder, here we push all the left node to stack right away 
+using a stack, but difference between using stack to do the preorder, here we push all the left node to stack right away
 
 ```java
 public List<Integer> inorderTraversal(TreeNode root) {
     List<Integer> list =new ArrayList<>();
     if(root==null)
     return list;
-    
+
     ArrayDeque<TreeNode> stack=new ArrayDeque<TreeNode>();
     while(root!=null){
     stack.push(root);
     root=root.left;
     }
-    
+
     while(!stack.isEmpty()){
         TreeNode curr=stack.pop();
         list.add(curr.val);
@@ -64,20 +64,24 @@ public List<Integer> inorderTraversal(TreeNode root) {
 }
 ```
 
-*  Postorder
+* Postorder
 
 using the same idea as preorder
 
-for a tree like 
+for a tree like 1\|2,3\|4,5,6   
 
-       1\|2,3\|4,5,6   preorder: 1 \(2 \(4 5\)\)\( 3 \(6\)\)  the postorder is \(\(4 5\) 2\)\(\(6\) 3\) 1 using  linkedlist, everytime insert in the first
+preorder: 1 \(2 \(4 5\)\)\( 3 \(6\)\) 
+
+postorder is \(\(4 5\) 2\)\(\(6\) 3\) 1 
+
+using  linkedlist, everytime insert in the first
 
 ```java
 public List<Integer> postorderTraversal(TreeNode root) {
     List<Integer> list =new LinkedList<>();
     if(root==null)
     return list;
-    
+
     ArrayDeque<TreeNode> stack=new ArrayDeque<>();
     stack.push(root);
    while(!stack.isEmpty()){
@@ -92,7 +96,7 @@ public List<Integer> postorderTraversal(TreeNode root) {
 }
 ```
 
-1. Level order
+* Level order
 
 利用Queue
 
@@ -121,7 +125,11 @@ public List<Integer> postorderTraversal(TreeNode root) {
  }
 ```
 
-1. Zigzag order
+* Binary Tree Vertical Order Traversal
+
+
+
+* Zigzag order
 
 
 
