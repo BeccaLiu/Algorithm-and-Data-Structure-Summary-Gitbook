@@ -1,3 +1,4 @@
-# My Awesome Book
+# Algorithms and Data Structure Summary
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+This gitBook including solutions and ideas about how to solving algorithms question using the example from leetcode
+
