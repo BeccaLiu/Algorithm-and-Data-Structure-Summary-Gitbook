@@ -127,6 +127,22 @@ public List<Integer> postorderTraversal(TreeNode root) {
  }
 ```
 
+```java
+levelOrderRec(root,new ArrayList<>(),0)
+public void levelOrderRec(TreeNode root,List<List<Integer>> ret, int level) {
+         if(root==null)
+         return;
+         
+         if(level>=ret.size())
+         ret.add(new ArrayList<Integer>());
+         
+         ret.get(level).add(root.val);
+         
+         levelOrderRec(root.left,ret,level+1);
+         levelOrderRec(root.right,ret,level+1);       
+ }
+```
+
 * ZigZag level traversal
 
 同上，唯一注意的是
