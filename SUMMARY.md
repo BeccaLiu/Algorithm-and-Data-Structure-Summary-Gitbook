@@ -11,4 +11,13 @@
   * [Two Sum](k-sum/two-sum.md)
   * [Three Sum](k-sum/three-sum.md)
   * [4 sum](k-sum/4-sum.md)
+* [4. Back Tracking](back-tracking.md)
+  * [4.1 Subset and Permutation](back-tracking/subset-and-permutation.md)
+    * [Subset](back-tracking/subset-and-permutation/subset.md)
+    * [Permutation](back-tracking/subset-and-permutation/permutation.md)
+  * [4.2](back-tracking/permutation.md)
+* [5. BFS](5graph.md)
+  * [WordLadder II](5graph/wordladder-ii.md)
+* [Trie](trie.md)
+* [DP](dp.md)
 

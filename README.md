@@ -6,6 +6,8 @@ This gitBook including solutions and ideas about how to solving algorithms quest
 
 Array为输入的题目一般考虑：输入是否有序，输入是否有重复内容，输入数据的范围
 
+图的题目，input考虑：是否有向无向图
+
 Reference
 
 [https://lefttree.gitbooks.io/leetcode-categories/content/sum/kSum.html](https://lefttree.gitbooks.io/leetcode-categories/content/sum/kSum.html)
