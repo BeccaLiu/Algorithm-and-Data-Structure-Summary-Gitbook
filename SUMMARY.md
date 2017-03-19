@@ -3,7 +3,6 @@
 * [Introduction](README.md)
 * [1. LinkedList](chapter1.md)
   * [Cycle in Linked list](chapter1/cycle-in-linked-list.md)
-* [Tree Traversal](tree-traversal.md)
 * [2. Binary Tree](binary-tree.md)
   * [常见基本问题](binary-tree/chang-jian-ji-ben-wen-ti.md)
   * [Bottom up](binary-tree/zong-jie.md)
@@ -20,4 +19,6 @@
   * [WordLadder II](5graph/wordladder-ii.md)
 * [Trie](trie.md)
 * [DP](dp.md)
+* [Tree Traversal](tree-traversal.md)
+* [Graph](graph.md)
 

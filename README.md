@@ -4,7 +4,7 @@ This gitBook including solutions and ideas about how to solving algorithms quest
 
 面试先考虑所有的输入case 再写算法比较好
 
-Array为输入的题目一般考虑：输入是否有序，输入是否有重复内容，输入数据的范围
+Array为输入的题目一般考虑：输入是否有序，输入是否有重复内容，输入数据的范围, 数据有无负数
 
 图的题目，input考虑：是否有向无向图
 
